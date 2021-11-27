@@ -32,6 +32,14 @@ export const Container = styled.div`
         margin: 0.5rem;
     }
 
+    textarea{
+        border-radius: 30px;
+        padding: 0.1rem 2rem;
+        margin: 0.5rem;
+        border: solid 2px;
+        
+    }
+
     button{
         justify-self: center;
         border-radius: 30px;
@@ -40,8 +48,13 @@ export const Container = styled.div`
         font-size: medium;
         height: 35px;
         width: 240px;
+        border: solid 2px;
     }
 
+    label{
+        margin-top: 1rem;
+        justify-self: center;
+    }
     a{
         margin-top: 0.5rem;
         justify-self: center;

@@ -1,24 +1,50 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { idText } from 'typescript';
+import { Cursos } from '../../Data/databse';
 
 import { Container } from './style';
 
 const AddCurso: React.FC = () => {
+
+  var Curso = {
+    id: document.getElementById ('idDoCurso'),
+    titulo: document.getElementById('nomeDoCurso'),
+    descricao: document.getElementById('descricao'),
+    imagem: document.getElementById('imagem'),
+    nomeProfessor: document.getElementById('nomeProfessor'),
+    listaDeAulas: document.getElementById('linkDasAulas')
+  }
+  
+  const cursos = Cursos;
+  
+  if(Curso.id !== null){
+    cursos.push();
+  }else{
+    alert("Preencha os dados");
+  }
+  
+  
+  console.log(Curso);
+
   return (
       <Container>
-          <form>
+          <form method='get' id='formulario'>
           <h1 className='Titulo'>Adicionar Curso</h1>
           <hr />
-          <input className='input--IMG' type='file' ></input>
-          <input placeholder='Digite o ID do curso'></input>
-          <input placeholder='Digite o título do curso'></input>
-          <input placeholder='Digite a descrição do curso'></input>
-          <input placeholder='Digite o nome do professor'></input>
-          <input placeholder='Digite o ID do curso'></input>
-          <button type="submit">Cadastrar</button>
+          <label>Selecione uma imagem para o curso</label>
+          <input className='input--IMG' type='file' id='imagem'></input>
+          <input placeholder='Digite o ID do curso' id='idDoCurso'></input>
+          <input placeholder='Digite o título do curso' id='nomeDoCurso'></input>
+          <textarea placeholder='Digite a descrição do curso' id='descricao' ></textarea>
+          <input placeholder='Digite o nome do professor' id='nomeProfessor'></input>
+          <input placeholder='Informe o link para as aulas' id='linkDasAulas'></input>
+          <button type='submit' value='send'>Cadastrar</button>
           <Link to='/consulta'>Voltar</Link>
           </form>
       </Container>
+          
+      
   );
 }
 
