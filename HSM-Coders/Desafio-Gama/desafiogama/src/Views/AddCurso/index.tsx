@@ -1,11 +1,16 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import { idText } from 'typescript';
 import { Cursos } from '../../Data/databse';
 
 import { Container } from './style';
 
 const AddCurso: React.FC = () => {
+
+  function stopAction(e: Event) {
+   e.preventDefault();
+  }
+
+  const cursos = Cursos;
 
   var Curso = {
     id: document.getElementById ('idDoCurso'),
@@ -16,10 +21,8 @@ const AddCurso: React.FC = () => {
     listaDeAulas: document.getElementById('linkDasAulas')
   }
   
-  const cursos = Cursos;
-  
   if(Curso.id !== null){
-    cursos.push();
+    Cursos.push();
   }else{
     alert("Preencha os dados");
   }

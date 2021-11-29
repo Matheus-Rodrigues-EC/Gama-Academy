@@ -1,5 +1,5 @@
 const Cursos = require('./DataBase');
-const Cursos = 
+
 /*  ● id (número identificador)
     ● título
     ● descrição
@@ -72,7 +72,6 @@ function addCurso(){
         //console.log(Cursos);
         
         console.log('Curso Adicionado com sucesso');    
-        return curso;
     }else{
         console.log('Curso não adicionado.')
     }
